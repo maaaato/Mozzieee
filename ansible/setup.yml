@@ -1,0 +1,6 @@
+---
+- hosts: all
+  sudo: yes
+  roles:
+    - common
+    - python2.7.10

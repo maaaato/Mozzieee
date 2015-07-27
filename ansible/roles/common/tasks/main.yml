@@ -1,0 +1,8 @@
+- name: apt-get update
+  command: apt-get update -y
+
+- name: install pkg
+  apt: pkg={{ item }} update_cache=yes
+  with_items:
+    - zlib1g-dev
+    - libssl-dev
