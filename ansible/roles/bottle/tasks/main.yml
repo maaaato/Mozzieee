@@ -1,0 +1,8 @@
+- name: check bottle
+  shell: pip list | grep bottle
+  failed_when: result.rc not in [0, 1]
+  
+- name: install bottle
+  command: pip install bottle
+  when: result.rc == 1
+ 

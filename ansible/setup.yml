@@ -4,3 +4,4 @@
   roles:
     - common
     - python2.7.10
+    - bottle
