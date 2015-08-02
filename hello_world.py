@@ -1,6 +1,16 @@
 # -*- coding: utf-8 -*-
 from bottle import route, run, template
 
+@route('/photo/<image_path:path>')
+def photo(image_path):
+    return template('image_path={{image_path}}',
+                    image_path=image_path)
+
+@route('/greeting/<name>')
+def greeting(name):
+    return template('Hello {{name}}.',
+                    name=name)
+
 @route('/hello')
 def hello():
 
