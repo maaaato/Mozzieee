@@ -5,4 +5,11 @@
 - name: install bottle
   command: pip install bottle
   when: result.rc == 1
- 
+
+- name: check boto3
+  shell: pip list | grep boto3
+  failed_when: result.rc not in [0, 1]
+  
+- name: install boto3
+  command: pip install boto3
+  when: result.rc == 1

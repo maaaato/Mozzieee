@@ -15,6 +15,8 @@ class Aschedule(object):
 
     
     def getSchedule(self):
-        return self.client.describe_scheduled_actions()
+        schedule = self.client.describe_scheduled_actions()
+        
+        return schedule["ScheduledUpdateGroupActions"]
 
         
