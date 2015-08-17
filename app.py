@@ -28,7 +28,6 @@ def js_dir(filename):
 def index():
     aschedule = Aschedule("test")
     sd = aschedule.getSchedule()
-    print sd
     
     return template("index",
                     aschedule=sd,

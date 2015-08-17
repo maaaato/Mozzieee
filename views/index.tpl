@@ -7,10 +7,10 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>id</th>
-                <th>タイトル</th>
-                <th>価格</th>
-                <th>メモ</th>
+                <th>Schedule Name</th>
+                <th>AutoScaling Group</th>
+                <th>Setting Time (UTC)</th>
+                <th>Time</th>
                 <th></th>
             </tr>
             </thead>
@@ -23,15 +23,65 @@
                 <td>{{schedule["StartTime"]}}</td>                
                 <td></td>
                 <td>
+                  <!--
                 <div class="input-group clockpicker">
                     <input type="text" class="form-control" value="09:30">
                             <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-time"></span>
                             </span>
                 </div>
+
                     <script type="text/javascript">
                     $('.clockpicker').clockpicker();
                     </script>
+                    -->
+                  <div class="input-group clockpicker-with-callbacks">
+                    <input type="text" class="form-control" value="10:10">
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                    </div>
+                  <script type="text/javascript">
+                    var input = $('.clockpicker-with-callbacks').clockpicker({
+                    donetext: 'Done',
+                    init: function() {
+                    console.log("colorpicker initiated");
+                    },
+                    beforeShow: function() {
+                    console.log("before show");
+                    },
+                    afterShow: function() {
+                    console.log("after show");
+                    },
+                    beforeHide: function() {
+                    console.log("before hide");
+                    },
+                    afterHide: function() {
+                    console.log("after hide");
+                    },
+                    beforeHourSelect: function() {
+                    console.log("before hour selected");
+                    },
+                    afterHourSelect: function() {
+                    console.log("after hour selected");
+                    },
+                    beforeDone: function() {
+                    console.log("before done");
+                    },
+                    afterDone: function() {
+                    alert("after done");
+                    console.log("after done");
+                    }
+                    });
+
+                    // Manually toggle to the minutes view
+                    $('#check-minutes').click(function(e){
+                    // Have to stop propagation here
+                    e.stopPropagation();
+                    input.clockpicker('show')
+                    .clockpicker('toggleView', 'minutes');
+                    });
+                                    </script>
                 </td>
             </tr>
             % end

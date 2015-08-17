@@ -11,7 +11,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">書籍管理アプリケーション</a>
+            <a class="navbar-brand" href="#">Bird of Paradise</a>
         </div>
     </div>
 </nav>
