@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from bottle import route, run, template, request
+from bottle import route, run, get, put, delete, template, request
 from bottle import static_file
 from schedule import Aschedule
 import datetime
@@ -24,6 +24,11 @@ def js_dir(filename):
     """ set js dir """
     return static_file(filename, root=BASE_DIR+"/views/dist/")
 
+@route('/js/<filename>')
+def js_dir(filename):
+    """ set js dir """
+    return static_file(filename, root=BASE_DIR+"/common/js/")
+
 @route('/')
 def index():
     aschedule = Aschedule("test")
@@ -34,6 +39,16 @@ def index():
                     request=request
     )
 
+@put('/times')
+def times():
+    aschedule = Aschedule("test")
+    sd = aschedule.getSchedule()
+    
+    return template("index",
+                    aschedule=sd,
+                    request=request
+    )
+    
 
 if __name__ == '__main__':
     

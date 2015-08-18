@@ -1,8 +1,6 @@
 % rebase('base.tpl')
-
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <h1 class="page-header">Schecule List</h1>
-
+    <h1 class="page-header">Schecule List</h1>    
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -23,18 +21,6 @@
                 <td>{{schedule["StartTime"]}}</td>                
                 <td></td>
                 <td>
-                  <!--
-                <div class="input-group clockpicker">
-                    <input type="text" class="form-control" value="09:30">
-                            <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-time"></span>
-                            </span>
-                </div>
-
-                    <script type="text/javascript">
-                    $('.clockpicker').clockpicker();
-                    </script>
-                    -->
                   <div class="input-group clockpicker-with-callbacks">
                     <input type="text" class="form-control" value="10:10">
                     <span class="input-group-addon">
@@ -69,7 +55,7 @@
                     console.log("before done");
                     },
                     afterDone: function() {
-                    alert("after done");
+                    times();
                     console.log("after done");
                     }
                     });
@@ -89,3 +75,5 @@
         </table>
     </div>
 </div>
+
+
