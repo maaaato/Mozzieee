@@ -22,7 +22,7 @@
                 <td></td>
                 <td>
                   <div class="input-group clockpicker-with-callbacks">
-                    <input type="text" class="form-control" value="10:10">
+                    <input type="text" class="form-control" value={{schedule["StartTime"]}}>
                     <span class="input-group-addon">
                       <span class="glyphicon glyphicon-time"></span>
                     </span>
