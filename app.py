@@ -2,7 +2,7 @@
 
 from bottle import route, run, get, put, delete, template, request
 from bottle import static_file
-from schedule import Aschedule
+import schedule
 import datetime
 import os
 
@@ -31,7 +31,7 @@ def js_dir(filename):
 
 @route('/')
 def index():
-    aschedule = Aschedule("test")
+    aschedule = schedule.get("test")
     sd = aschedule.getSchedule()
     
     return template("index",
@@ -41,7 +41,7 @@ def index():
 
 @put('/times')
 def times():
-    aschedule = Aschedule("test")
+    aschedule = schedule.get("test")
     sd = aschedule.getSchedule()
     
     return template("index",
